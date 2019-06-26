@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace定义当前的xml配置文件与哪一个dao接口文件，是对应关系 -->
+<mapper namespace="com.gsj.mapper.UserMapper">
+    <!--parameterType 表示传入接口的方法类型  该接口方法对应的是该id-->
+   <insert id="insertUser" parameterType="com.gsj.pojo.Users">
+       INSERT into userinfo (id,username,userage) values(#{id},#{username},#{userage})
+   </insert>
+    <!--resultType查询出来的返回类型  对应的方法名 selectUserAll-->
+    <select id="selectUserAll" resultType="com.gsj.pojo.Users">
+        select * from userinfo
+    </select>
+</mapper>
